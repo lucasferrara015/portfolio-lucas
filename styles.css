@@ -1,0 +1,803 @@
+
+/* Reset básico y tipografía */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(
+    to bottom,
+    #cdeffd 0%,
+    #e6f7ff 30%,
+    #ffffff 100%
+  ); /* Fondo más dinámico */
+  color: #212529;
+  padding-top: 80px;
+}
+
+
+
+/* Navegación */
+.navbar {
+  position: fixed; /* en vez de sticky */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #1e1e2f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ffd43b;
+}
+
+.hamburguesa {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #ffd43b;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  animation: pulse 2.5s infinite; /* ✨ Acá agregamos la animación! */
+}
+
+/* Efecto Hover para complementar */
+.btn:hover {
+  background-color: #ffc107;
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Definimos la animación Pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Secciones generales */
+.section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #5dade2; /* Azul claro por defecto (puedes cambiarlo por #7fbfff o #89c4f4) */
+  text-shadow: 0 0 6px rgba(93, 173, 226, 0.2); /* Sutil brillo para el azul claro */
+  transition: all 0.3s ease;
+}
+
+.section h2:hover {
+  color: #0066ff; /* Azul brillante al hacer hover (más intenso) */
+  text-shadow: 0 0 12px rgba(0, 102, 255, 0.4); /* Brillo más fuerte */
+}
+
+/* Servicios */
+.servicios {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.servicios li {
+  margin-bottom: 0.5rem;
+}
+
+/* Proyectos */
+.proyectos {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.proyecto {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.proyecto a.btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+#contacto input,
+#contacto textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  color: #212529;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contacto button {
+  background-color: #343a40;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#contacto button:hover {
+  background-color: #495057;
+  animation: bounce 0.5s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.modo-oscuro #contacto button:hover {
+  background-color: #555;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e2f;
+  color: white;
+  margin-top: 3rem;
+}
+
+/* Modo oscuro */
+body.modo-oscuro {
+  background-color: #121212;
+  color: #eee;
+}
+
+.modo-oscuro .navbar,
+.modo-oscuro footer {
+  background-color: #222;
+}
+
+.modo-oscuro .proyecto {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.modo-oscuro .section {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+.modo-oscuro .section h2 {
+  color: #ffd43b;
+}
+
+.modo-oscuro .hero {
+  background-color: #2d2d2d;
+}
+
+.modo-oscuro .servicios {
+  color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #1e1e2f;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .nav-links.activo {
+    display: flex;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .proyecto {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+  
+.uno {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  background-color: #f0f0f0;
+  color: #303030;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.caja-central {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.caja-cara {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background-color: #ddd;
+}
+
+.caja-cara img.cara {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border: 4px solid white;
+}
+
+.caja-presentacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  padding: 30px;
+  background-color: #fefefe;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .caja-central {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .caja-cara,
+  .caja-presentacion {
+    width: 100%;
+  }
+
+  .caja-presentacion {
+    padding: 20px;
+  }
+}
+.contacto-redes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.icono-social {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.2s ease;
+}
+
+.icono-social:hover {
+  transform: scale(1.15);
+}
+.nav-links a.active {
+  color: #ffd43b;
+  font-weight: bold;
+  border-bottom: 2px solid #ffd43b;
+  transition: all 0.2s ease-in-out;
+}
+.grid-carrusel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-items: center;
+}
+
+.grid-carrusel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.grid-carrusel img:hover {
+  transform: scale(1.03);
+}
+.grid-carrusel {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+@media (max-width: 768px) {
+  .grid-carrusel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  max-width: 200px; /* Máximo igual a la portada pero puede ser más pequeño */
+}
+
+.video-mas-chico {
+  width: 180px; /* Un poco más pequeño que la portada */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra más suave */
+  transition: transform 0.2s ease;
+}
+
+.video-mas-chico:hover {
+  transform: scale(1.03);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15); /* Sombra hover más discreta */
+}
+.reel-educativo {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.reel-educativo h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.reel-educativo p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.tesis-destacada {
+  background: linear-gradient(135deg, #f9f6ff, #e5eafc);
+  border-left: 6px solid #7b2cbf;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-top: 2rem;
+}
+
+.tesis-destacada h3 {
+  color: #4b0082;
+  margin-bottom: 1rem;
+}
+
+.teaser-tesis {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.portada-tesis {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+.portada-tesis-click {
+  width: 200px;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.portada-tesis-click:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+/* Borde naranja para Landing Page */
+.borde-naranja {
+  border: 3px solid #FFA500; /* Naranja */
+}
+
+/* Borde verde para Creación de Contenidos */
+.borde-verde {
+  border: 3px solid #28a745; /* Verde */
+}
+/* Borde violeta para la Tesis */
+.borde-violeta {
+  border: 3px solid #6f42c1; /* Violeta */
+}
+body.modo-oscuro .tesis-destacada {
+  background: #2d2d3a; /* Un fondo violeta grisáceo suave */
+  border: 2px solid #bb86fc; /* Violeta suave */
+  color: #e0e0e0; /* Letras gris claro, NO blanco puro */
+}
+
+body.modo-oscuro .tesis-destacada h3 {
+  color: #d0b3ff; /* Título un poquito más brillante */
+}
+
+body.modo-oscuro .tesis-destacada p {
+  color: #cccccc; /* Párrafo más suave, para lectura descansada */
+}
+.proyecto {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 3rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px); /* se levanta un poco */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra más intensa */
+}
+/* Modo oscuro para la sección Sobre mí - Versión con título personalizado */
+body.modo-oscuro .uno {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+body.modo-oscuro .caja-central {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.modo-oscuro .caja-cara {
+  background-color: #3d3d3d;
+}
+
+body.modo-oscuro .caja-presentacion {
+  background-color: #2d2d2d;
+  color: #eee;
+}
+
+/* Título personalizado - puedes cambiar el color hexadecimal (#7b9dfa) por el que prefieras */
+body.modo-oscuro .caja-presentacion h1 {
+  color: #7b9dfa; /* Azul suave */
+  /* Otras alternativas: */
+  /* color: #9c89ff; -> Lila */
+  /* color: #6bd6e1; -> Turquesa */
+  /* color: #ff9e7d; -> Coral */
+}
+body.modo-oscuro .caja-presentacion h1 {
+  color: #7b9dfa;
+  text-shadow: 0 0 8px rgba(123, 157, 250, 0.3); /* Sutil brillo del mismo color */
+  transition: color 0.3s ease;
+}
+
+body.modo-oscuro .caja-presentacion h1:hover {
+  color: #9cb7ff; /* Versión más clara al hacer hover */
+}
+/* Versión normal (modo claro) */
+.caja-presentacion h1 {
+  color: #343a40; /* Color oscuro para modo claro */
+  transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+.caja-presentacion h1:hover {
+  color: #1a73e8; /* Azul moderno al hacer hover (puedes cambiarlo) */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(120deg, #e0f7fa, #e3f2fd);
+  background-size: 400% 400%;
+  animation: movimientoFondo 20s ease infinite;
+  color: #212529;
+  padding-top: 80px;
+}
+
+@keyframes movimientoFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body.modo-oscuro {
+  background: linear-gradient(to bottom right, #1a1a2e, #121212);
+  color: #eee;
+}
+.intro-servicios {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.servicio {
+  background-color: white;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #add8e6; /* 🟦 Borde azul claro */
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-color: #87ceeb; /* Azul celeste más intenso */
+}
+
+.icono-contenedor {
+  width: 90px;
+  height: 90px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono-contenedor img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.herramientas {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Modo oscuro */
+body.modo-oscuro .servicio {
+  background-color: #1e1e2f;
+  color: #ccc;
+  border: 2px solid #5dade2; /* Un azul más intenso en modo oscuro */
+  }
+
+body.modo-oscuro .herramientas {
+  color: #aaa;
+}
+
+body.modo-oscuro .icono-contenedor {
+  background-color: #2a2a2a;
+}
+.icono-contenedor img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  transition: transform 0.3s ease; /* Esto permite la animación suave */
+}
+
+.icono-contenedor img:hover {
+  transform: scale(1.15); /* Aumenta un 15% el tamaño al pasar el cursor */
+}
+.intro-servicios {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.3rem; /* más grande */
+  line-height: 1.8; /* más aireado */
+  font-weight: 400; /* más fino, elegante */
+  color: #444; /* gris oscuro sobrio */
+  font-style: italic; /* opcional: tono elegante si querés */
+}
+
+/* Modo oscuro */
+body.modo-oscuro .intro-servicios {
+  color: #cccccc; /* gris claro en modo oscuro */
+}
+
+.section h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+}
+
+/* Subrayado animado */
+.section h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd43b; /* Amarillo protagonista */
+  transition: width 0.4s ease;
+}
+
+/* Al pasar el mouse */
+.section h2:hover::after {
+  width: 60%; /* Se anima a mostrar el subrayado */
+}
+.intro-servicios {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #444;
+  background: #ffffff; /* Fondo blanco */
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave */
+  border: 2px solid #add8e6; /* Borde azul claro */
+}
+
+/* Modo oscuro */
+body.modo-oscuro .intro-servicios {
+  background: #1e1e2f; /* Fondo gris oscuro */
+  color: #ccc; /* Letras gris claro */
+  border: 2px solid #5dade2; /* Borde azul en modo oscuro */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra más intensa */
+}
+.section-parallax {
+  position: relative;
+  z-index: 1;
+  background-image: url('img/fondo-secciones.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate; /* Permite filtros internos sin romper nada */
+}
+
+.section-parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(173, 216, 230, 0.4); /* Filtro celeste suave modo claro */
+  z-index: -1;
+}
+
+body.modo-oscuro .section-parallax::before {
+  background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para legibilidad */
+}
+/* Efecto parallax para la sección contacto */
+.section-parallax.contacto {
+  background-image: url('img/fondo-contacto.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 5rem 2rem;
+  z-index: 1;
+}
+
+/* Filtro para mantener claridad */
+.section-parallax.contacto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: -1;
+}
+
+body.modo-oscuro .section-parallax.contacto::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo claro del formulario */
+.contacto input,
+.contacto textarea {
+  background-color: white;
+  color: #212529;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+
